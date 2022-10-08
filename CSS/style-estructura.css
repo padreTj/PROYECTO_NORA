@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+*{
+    font-family: 'Roboto Flex', sans-serif;
+}
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    min-height: 100%;
+}
+
+.grid-container{
+    min-width: 320px;
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "aside"
+    "main";
+}
+
+
+
+ .tablaFlow{
+        height: 200px;
+    width: 250px;
+
+    background: #f1f1f1;
+    overflow-y: scroll;
+    }
+
+
+
+
+.nav{
+    padding: 5px;
+    grid-area:nav;
+    background-color: #212529;
+    display: flex;
+    flex-wrap: wrap;
+}
+    .nav-cont{
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: #212529;
+        display: flex;
+        flex-direction: row;
+    }
+        .logo{
+            height: 100%;
+            width: 10%;
+            background-color: #212529;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .descripcion{
+            height: 100%;
+            width: 80%;
+            background-color: #212529;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: 100%;
+        }
+        
+.aside{
+    grid-area:aside;
+    background-color: #212529;
+    display: grid;
+    grid-template-rows: 50px 100px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "aside-menubtn"
+    "aside-logo"
+    "aside-titulo"
+    "aside-menu"
+    "aside-menu"
+    "aside-menu"
+    "aside-menu"
+    "aside-menu"
+    "aside-menu";
+    
+    
+}   
+
+    .aside-menubtn{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    
+    .aside-menu{
+        padding: 5px;
+        font-size: 25px;
+    }
+    
+        .asideopc{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .asideopc:hover{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #0D6EFD
+        }
+        .asideopc-active{
+            background-color: #ffffff;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #212529;
+            border-radius: 5px;
+        }
+        .asideopc-active:hover{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #212529;
+            background-color: #ffffff;
+        }
+
+    .aside-logo{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: crimson; */
+        
+    }
+    .aside-titulo{
+
+        display: flex;
+        place-items: center;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        /* background-color: brown; */
+    }
+
+.main{
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .main-cuadro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #F7F7F7;
+    }
+    
+
+@media (min-width: 320px){
+    .grid-container{
+        grid-template-rows: 75px 0% auto;
+        grid-template-columns: auto;
+        max-height: 100vh;
+        grid-template-areas: 
+        "nav"
+        "aside"
+        "main"
+        ;
+    }
+}
+
+@media (min-width: 425px){
+    .grid-container{
+        grid-template-rows: 75px 0% auto;
+        grid-template-columns: auto;
+        max-height: 100vh;
+        grid-template-areas: 
+        "nav"
+        "aside"
+        "main"
+        ;
+    }
+}
+
+@media (min-width: 650px){
+    .grid-container{
+        grid-template-rows: 0% auto;
+        grid-template-columns: 230px auto;
+        
+        grid-template-areas: 
+        "nav nav"
+        "aside main"
+        
+        ;
+    }
+}
+
+@media (min-width: 1024px){
+    .grid-container{
+        grid-template-rows: 0% auto;
+        grid-template-columns: 300px auto;
+        
+        grid-template-areas: 
+        "nav nav"
+        "aside main"
+        ;
+    }
+}
+
+
+
+.mySidenav-menu{
+    display: grid;
+    grid-template-rows: 150px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 100%;
+    gap: 5px;
+    grid-template-areas:
+    "sidenav" 
+    "mySidenav-titulo"
+    "mySidenavmenu"
+    "mySidenavmenu"
+    "mySidenavmenu"
+    "mySidenavmenu"
+    "mySidenavmenu"
+    "mySidenavmenu"
+    ;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #212529;
+    overflow-x: hidden;
+    transition: .5s;
+    padding-top: 10px;
+    
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top:10px;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+} 
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    transition: ease all 3s;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+    .mySidenav-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mySidenav-titulo{
+        font-size: 70px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    .mySidenav-menu-cont{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    .mySidenav-menu-cont:hover{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #0D6EFD;
+        animation: ease all 3s;
+    }
+
+     .caja{
+                        
+                        width: 100%;
+                        height: 100%;
+                      
+                      display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+                        
+                    }
+                    
+                    .contenedor{
+                    border: 12px dashed #000000;
+  border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+
+                       grid-column: 2/3;
+                        grid-row: 2/3;
+                        width: 100%;
+                        height:100%;
+                    }
+                 
+                    
+                    
+                    @media (max-width: 650px){
+
+                       .contenedor{
+                        
+                        
+                       grid-column: 2/3;
+                        grid-row: 1/3;
+                        width: 100%;
+                        height:100%;
+                    }
+
+                }
+        
+input[type=text],input[type=password]{
+font-size: 16px;
+width: 350px;
+height: 30px;
+margin: 8px 0px;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+
+}
+                
+input[type=submit] {
+  font-size: 16px;
+
+  width: 350px;
+  background-color: #707070 ;
+  color: white;
+ height: 30px;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #999999;
+}
+

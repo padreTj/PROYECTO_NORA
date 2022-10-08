@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto Flex', sans-serif;
+    }
+body {
+  align-items: center;
+  background-color:#FBFCFC;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+ height: 750px;
+  padding: 20px;
+  width: 320px;
+}
+
+.title {
+  color: #eee;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut2 {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 120px;
+}
+
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+
+.input:focus ~ .cut2,
+.input:not(:placeholder-shown) ~ .cut2 {
+  transform: translateY(8px);
+}
+
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #FBFCFC;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+
+
+.content-select select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+.content-select select::-ms-expand {
+    display: none;
+}
+
+
+.content-select{
+  max-width: 250px;
+  position: relative;
+}
+ 
+.content-select select{
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+    padding: 7px 10px;
+    height: 42px;
+    outline: 0; 
+    border: 0;
+  border-radius: 0;
+  background: #303245;
+  color: #7b7b7b;
+  font-size: 1em;
+  color: #999;
+  border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.content-select select:hover{
+  background: #FBFCFC;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i{
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 13px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left:4px solid #2AC176;
+  border-bottom:4px solid #2AC176;
+  transform: rotate(-45deg); /* Giramos el cuadrado */
+  transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+  margin-top: 3px;
+}
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto Flex', sans-serif;
+    }
+ 
+ body{
+    background-color:#FBFCFC;
+ }
+
+
+/*encabezado*/
+
+
+.bandaEncabezado{
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        top: 0;left: 0;
+        background-color: #02003F;
+    }
+
+ 
+     .Encabezado{
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;  
+    }
+
+     .Encabezado .btn-menu, .logo{
+        float: left;
+        line-height:100px;
+    }
+
+    .Encabezado .btn-menu label{
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .logo h1{
+        color: white;
+        font-weight: 400;
+        font-size: 25px;
+        margin-left: 10px;
+    }
+   
+.Encabezado .menu{
+        float: right;
+        line-height: 100px;
+    }
+    .Encabezado .menu a{
+        display: inline-block;
+        padding: 15px;
+        line-height: normal;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    .Encabezado .menu a:hover{
+        border-bottom: 2px solid white;
+        padding-bottom: 5px;
+    }
+ .logo2{
+     
+     
+     
+     width: 100%;
+        max-width: 550px;
+        height: 50%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+     border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+     
+     
+     
+    
+        }
+
+/*fin del encabezado*/
+
+/*Menu lateral*/
+
+
+.container-formularios{
+        position: absolute;
+        
+        width: 100%;
+        height: 89vh;
+        top: 100px;left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
