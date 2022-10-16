@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['usuarioAdmin'])){
 
-  header("Location:index.php");
+    header("Location:index.php");
 }
 
 ?>
@@ -66,7 +66,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 Menu
             </div>
 
-           
             <li class="nav-item">
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -87,21 +86,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 
             </li>
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -116,22 +100,11 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     </div>
                 </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
                     aria-expanded="true" aria-controls="collapseTwo">
-                     <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Consultas</span>
                 </a>
                 <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -142,22 +115,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     </div>
                 </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
@@ -173,15 +130,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 </div>
             </li>
 
-         
-         
-         
-         
-         
-         
-         
-         
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -191,13 +139,11 @@ if(!isset($_SESSION['usuarioAdmin'])){
             </div>
 
             <!-- Sidebar Message -->
-          
 
         </ul>
 
         <!-- Content Wrapper -->
 
-        
         <div id="content-wrapper" class="d-flex flex-column">
 
             <div class="text-white" style="background-color: #A87C4D;"><center>
@@ -232,8 +178,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                              
-                              
+
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -255,12 +200,9 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
                     
 
-                      <center>
+                    <center>
                         <img src="Gob.png" class="mt-4 py-5" style="width: 180px;">
-                      </center>
-                            
-                      
-                    
+                    </center>
 
                 </div>
                 <!-- /.container-fluid -->

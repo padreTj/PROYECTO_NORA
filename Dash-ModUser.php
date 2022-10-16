@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usuarioAdmin'])){
+if (!isset($_SESSION['usuarioAdmin'])) {
 
-  header("Location:index.php");
+    header("Location:index.php");
 }
 
-
 // Verificamos la conexión con el servidor y la base de datos
-  $mysqli = new mysqli('localhost', 'id18803800_proyectonora_362', 'ClaveNora362_', 'id18803800_databasenora');
+$mysqli = new mysqli('localhost', 'id18803800_proyectonora_362', 'ClaveNora362_', 'id18803800_databasenora');
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +17,16 @@ if(!isset($_SESSION['usuarioAdmin'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style-estructura2.css">
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
- 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-      
-      
-      
-      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+
     <title>Modificar Usuario</title>
 </head>
 <body>
@@ -41,7 +40,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 <h1>ICABC</h1>
             </div>
 
-           <nav class="menu">
+            <nav class="menu">
                 <a href="cerrarSesion.php">Cerrar Sesion</a>
             </nav>
         </div>
@@ -49,7 +48,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="barraLateral">
-     
+
             <nav>
                 <a href="Dash-inicio.php">Inicio</a>
                 <a href="Dash-AltaUsuario.php">Alta Usuario</a>
@@ -66,7 +65,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
             <center><br>
                 <form name="modU" action="phpModUs.php" method="POST">
 
-                            
+
                                 <b>Escribe el nombre</b><br>
                             <input type="text" name="term" id="term" placeholder="Nombre Usuario" required><br><br>
                             <script type="text/javascript">
@@ -75,29 +74,29 @@ if(!isset($_SESSION['usuarioAdmin'])){
                                         source: 'ajax-db-search.php',
                                     });
                                 });
-                            </script> <br><br>  
-                              
-                            
-                            
-      
-                            
+                            </script> <br><br>
+
+
+
+
+
 
                             <select name="camp" onChange="mostrar(this.value);" required>
                                 <option selected disabled value="">Selecciona el campo a modificar</option>
                                 <option value="nombre">Nombre</option>
                                 <option value="clave">Clave</option>
                                 <option value="tipoUsuario">Tipo de usuario</option>
-                                
+
                             </select><br><br><br>
-                            
+
                             <div id="nombre" style="display: none;">
                             <input type="text" name="nombreUsuario" placeholder="Nombre de usuario">
                             </div>
-                            
+
                             <div id="clave" style="display: none;">
                             <input type="text" name="clav" placeholder="Clave de usuario">
                             </div>
-                            
+
 
 
                             <div id="tipoUsuario" style="display: none;">
@@ -110,7 +109,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                             </select>
 
                             </div><br><br>
-                            
+
                             <input type="submit" value="Modificar"></input>
                         </form>
             </center>
@@ -133,11 +132,11 @@ function mostrar(id) {
         $("#nombre").show();
         $("#clave").hide();
     }else if(id == "clave"){
-         $("#tipoUsuario").hide();
+        $("#tipoUsuario").hide();
         $("#nombre").hide();
         $("#clave").show();
     }
 
-    
+
 }
 </script>

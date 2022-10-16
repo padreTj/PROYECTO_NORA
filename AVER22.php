@@ -15,7 +15,7 @@
                                 
                                 
                             
-      
+    
                                 $sql2="SELECT * FROM usuarios";
                                 $ejecutar2=mysqli_query($obj_conexion, $sql2);
                                 while($fila2=mysqli_fetch_array($ejecutar2)){

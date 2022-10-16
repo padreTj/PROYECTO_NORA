@@ -1,0 +1,47 @@
+On branch VERSION_ENRIQUE
+Your branch is up to date with 'origin/VERSION_ENRIQUE'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   AVER22.php
+	modified:   Dash-AltaUsuario.php
+	modified:   Dash-BajaUser.php
+	modified:   Dash-ConsultUser.php
+	modified:   Dash-ModUser.php
+	modified:   Dash-TableUser.php
+	modified:   Dash-inicio.php
+	modified:   Doctor-TableRes.php
+	modified:   Doctor-TableUser.php
+	modified:   Doctor.php
+	modified:   Paciente.php
+	modified:   altaDoctor.html
+	modified:   cerrarSesion.php
+	modified:   conexion.php
+	modified:   consultaUsuarios.php
+	modified:   datosPersonalesALL.php
+	modified:   descargarRespuestas.php
+	modified:   descargarRespuestas2.php
+	modified:   doctorConsultUser.php
+	modified:   doctorEncuestaPaciente.php
+	modified:   encuesta.php
+	modified:   formularioDP.php
+	deleted:    formularioPruebas.php
+	modified:   index.php
+	modified:   indexer.html
+	modified:   phpAltaUsuarios.php
+	modified:   phpAsigna.php
+	modified:   phpBajaUs.php
+	modified:   phpEnviarPregResu.php
+	modified:   phpLogin.php
+	modified:   phpModUs.php
+	deleted:    pruebaAsignar.php
+	deleted:    pruebaPreguntas.php
+	deleted:    pruebasCodigo.php
+	modified:   validacionFormu.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	cambios.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")

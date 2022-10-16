@@ -1,9 +1,11 @@
 <?php
 
 
+include "./conexion.php";
+
 
 // Verificamos la conexión con el servidor y la base de datos
-  $mysqli = new mysqli('localhost', 'id18803800_proyectonora_362', 'ClaveNora362_', 'id18803800_databasenora');
+    $mysqli = new mysqli('localhost', 'id18803800_proyectonora_362', 'ClaveNora362_', 'id18803800_databasenora');
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +15,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style-estructura2.css">
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
- 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-      
-      
-      
-      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  
     <title>Eliminar Usuario</title>
 </head>
 <body>
@@ -36,7 +33,7 @@
                 <h1>ICABC</h1>
             </div>
 
-           <nav class="menu">
+            <nav class="menu">
                 <a href="cerrarSesion.php">Cerrar Sesion</a>
             </nav>
         </div>
@@ -44,7 +41,6 @@
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="barraLateral">
-     
             <nav>
                 <a href="Dash-inicio.php">Inicio</a>
                 <a href="Dash-AltaUsuario.php">Alta Usuario</a>
@@ -80,8 +76,8 @@
                                     ?>
                                     <tbody>
                                         <tr>
-                                           <td><?php echo $fila[0] ?></td>
-                                           <td><?php echo $fila[1] ?></td>
+                                            <td><?php echo $fila[0] ?></td>
+                                            <td><?php echo $fila[1] ?></td>
                                         </tr>
                                     </tbody>
                                     <?php

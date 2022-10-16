@@ -12,15 +12,13 @@
                                     </tr>
                                 </thead>
                                 <?php
-                                include("./conexion.php");
-                                
-                                
-                            
-      $nomm = $_POST['nombreTerm2'];
-                                $sql2="SELECT Preguntas.idPregunta,datosPersonales.nombre,pregunta,respuesta FROM Preguntas JOIN ".$nomm."_Preguntas ON ".$nomm."_Preguntas.idPregunta=Preguntas.idPregunta JOIN datosPersonales ON datosPersonales.idUsuario=".$nomm."_Preguntas.idUsuario";
-                                $ejecutar2=mysqli_query($obj_conexion, $sql2);
-                                while($fila2=mysqli_fetch_array($ejecutar2)){
-                                ?>
+include "./conexion.php";
+
+$nomm = $_POST['nombreTerm2'];
+$sql2 = "SELECT Preguntas.idPregunta,datosPersonales.nombre,pregunta,respuesta FROM Preguntas JOIN " . $nomm . "_Preguntas ON " . $nomm . "_Preguntas.idPregunta=Preguntas.idPregunta JOIN datosPersonales ON datosPersonales.idUsuario=" . $nomm . "_Preguntas.idUsuario";
+$ejecutar2 = mysqli_query($obj_conexion, $sql2);
+while ($fila2 = mysqli_fetch_array($ejecutar2)) {
+    ?>
                                 <tbody>
                                     <tr>
                                         <td><?php echo $fila2[0] ?></td>
@@ -31,6 +29,6 @@
                                     </tr>
                                 </tbody>
                                 <?php
-                                }
-                                ?>
+}
+?>
                             </table>

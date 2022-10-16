@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['tipoUser'])){
-
-
+if (!isset($_SESSION['tipoUser'])) {
 
     session_destroy();
 
-      header("Location:index.php");
+    header("Location:index.php");
 }
 
 ?>
@@ -21,7 +19,6 @@ if(!isset($_SESSION['tipoUser'])){
     <title>Datos Personales</title>
 </head>
 <body>
-   
 
 <form name="datosPerForm" action="datosPersonalesALL.php" method="POST">
 
@@ -37,17 +34,11 @@ if(!isset($_SESSION['tipoUser'])){
         <label for="firstname" class="placeholder">Nombre</label>
       </div>
 
-
-
-
-
       <div class="input-container ic2">
         <input id="lastname" class="input" name="apellidoPaterno" type="text" placeholder=" " />
         <div class="cut2"></div>
         <label for="lastname" class="placeholder">Apellido Paterno</label>
       </div>
-
-
 
         <div class="input-container ic2">
         <input id="lastname2" class="input" name="apellidoMaterno" type="text" placeholder=" " />
@@ -61,51 +52,32 @@ if(!isset($_SESSION['tipoUser'])){
         <label for="age" class="placeholder">Edad</label>
       </div>
 
-
-
-
-
-
-
       <div class="input-container ic2">
         <input id="email" name="correoElectronico" class="input" type="text" placeholder=" " />
         <div class="cut cut-short"></div>
         <label for="email" class="placeholder">Email</label>
       </div>
-      
-      
+
+
       <div class="input-container ic2">
 
-
-
 <div class="content-select">
-
 
         <select name="sexo" id="selectSEX">
 <option value="Masculino">Masculino</option>
 <option value="Femenino">Femenino</option>
 <option value="Prefiero no decir">Prefiero no decir</option>
 </select>
-        
+
 
 
 </div>
 
       </div>
-      
-      
-      
-      
-      
-    
+
       <input type="submit" class="submit" value="Entrar">
 </div>
 </form>
-
-
-
-
-
 
 </body>
 </html>

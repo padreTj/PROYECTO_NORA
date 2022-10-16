@@ -2,9 +2,9 @@
 
 session_start();
 
-if(!isset($_SESSION['tipoUser']) && !isset($_SESSION['claveUser']) && !isset($_SESSION['usuarioDoctor'])){
+if (!isset($_SESSION['tipoUser']) && !isset($_SESSION['claveUser']) && !isset($_SESSION['usuarioDoctor'])) {
 
-  header("Location:index.php");
+    header("Location:index.php");
 }
 ?>
 
@@ -27,64 +27,43 @@ if(!isset($_SESSION['tipoUser']) && !isset($_SESSION['claveUser']) && !isset($_S
             <div class="logo">
                 <h1><?php
 
-           
-$servername = "localhost";
-$username = "id18803800_proyectonora_362";
-$password = "ClaveNora362_";
-$dbname = "id18803800_databasenora";
+/*conexion a base de datos*/
+include "./conexion.php";
 
-
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if ($obj_conexion->connect_error) {
+    die("Connection failed: " . $obj_conexion->connect_error);
 }
 
-                
-                $nombre=$_SESSION['usuarioDoctor'];
-                $sql55 = "SELECT * FROM usuarios WHERE nombre='".$nombre."'";
-                $result55 = $conn->query($sql55);
-                
-                if ($result55->num_rows > 0) {
-                    
-                    $row = mysqli_fetch_array($result55, MYSQLI_ASSOC);
-                    $idU= $row["idUsuario"];
-                    
-                    $sql552 = "SELECT nombre FROM datosPersonales WHERE idUsuario=".$idU;
-                $result552 = $conn->query($sql552);
-                
-                if ($result552->num_rows > 0) {
-                    
-                    $row2 = mysqli_fetch_array($result552, MYSQLI_ASSOC);
-                    $nomb= $row2["nombre"];
-                    
-                }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                }else{
-                    echo "no";
-                }
-                
-                echo $nomb;
-                
-                
-                
-                
-                
-                ?></h1>
+$nombre = $_SESSION['usuarioDoctor'];
+$sql55 = "SELECT * FROM usuarios WHERE nombre='" . $nombre . "'";
+$result55 = $obj_conexion->query($sql55);
+
+if ($result55->num_rows > 0) {
+
+    $row = mysqli_fetch_array($result55, MYSQLI_ASSOC);
+    $idU = $row["idUsuario"];
+
+    $sql552 = "SELECT nombre FROM datosPersonales WHERE idUsuario=" . $idU;
+    $result552 = $obj_conexion->query($sql552);
+
+    if ($result552->num_rows > 0) {
+
+        $row2 = mysqli_fetch_array($result552, MYSQLI_ASSOC);
+        $nomb = $row2["nombre"];
+
+    }
+
+} else {
+    echo "no";
+}
+
+echo $nomb;
+
+?></h1>
             </div>
 
-           <nav class="menu">
+            <nav class="menu">
                 <a href="cerrarSesion.php">Cerrar Sesion</a>
             </nav>
         </div>
@@ -92,7 +71,7 @@ if ($conn->connect_error) {
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="barraLateral">
-         
+
             <nav>
                 <a href="Doctor.php">Inicio</a>
                 <a href="doctorConsultUser.php">Datos Paciente</a>
@@ -113,7 +92,7 @@ if ($conn->connect_error) {
             </center>
 
 
-            
+
         </div>
     </div>
 </body>

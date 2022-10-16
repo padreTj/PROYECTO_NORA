@@ -1,82 +1,43 @@
 <?php
-$servername = "localhost";
-$username = "id18803800_proyectonora_362";
-$password = "ClaveNora362_";
-$dbname = "id18803800_databasenora";
+/*conexion a base de datos*/
+include "./conexion.php";
 
-$paciente=htmlentities(addslashes($_POST["pac"]));
-$psicologo=htmlentities(addslashes($_POST["psi"]));
+$paciente = htmlentities(addslashes($_POST["pac"]));
+$psicologo = htmlentities(addslashes($_POST["psi"]));
 
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if ($obj_conexion->connect_error) {
+    die("Connection failed: " . $obj_conexion->connect_error);
 }
 
-
 $sql = "INSERT INTO medico_Paciente (idPaciente, idMedico)
-VALUES ('".$paciente."', '".$psicologo."')";
+VALUES ('" . $paciente . "', '" . $psicologo . "')";
 
+if ($obj_conexion->query($sql) === true) {
 
+    $sqlDel = "DELETE FROM _Paciente WHERE idUsuario='" . $paciente . "'";
 
-     if ($conn->query($sql) === TRUE) {
-         
-         
-         
-         
-         $sqlDel="DELETE FROM _Paciente WHERE idUsuario='".$paciente."'";
-         
-         
-         
-          if ($conn->query($sqlDel) === TRUE) {
-              
-              
-                
+    if ($obj_conexion->query($sqlDel) === true) {
+
         echo "<script>
         alert('Registro exitoso');
           window.location= 'Dash-Asig.php'
 </script>";
-              
-              
-          }else{
-               echo "<script>
-                alert('Ocurrio un error inesperado');
-                window.location= 'Dash-Asig.php'
-               
-    </script>";
-          }
-         
-         
 
-      } else {
+    } else {
         echo "<script>
                 alert('Ocurrio un error inesperado');
                 window.location= 'Dash-Asig.php'
-               
+
     </script>";
-      }
+    }
 
-    
+} else {
+    echo "<script>
+                alert('Ocurrio un error inesperado');
+                window.location= 'Dash-Asig.php'
 
+    </script>";
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-$conn->close();
-?>
+$obj_conexion->close();

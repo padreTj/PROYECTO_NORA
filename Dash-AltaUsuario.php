@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usuarioAdmin'])){
+if (!isset($_SESSION['usuarioAdmin'])) {
 
-  header("Location:index.php");
+    header("Location:index.php");
 }
 
 ?>
@@ -19,7 +19,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
@@ -43,7 +43,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    
+
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Dash-inicio.php">
                 <div class="sidebar-brand-icon rotate-n-0">
@@ -72,14 +72,14 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
 
 
- <li class="nav-item">
+<li class="nav-item">
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Altas</span>
                 </a>
-                
+
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -88,24 +88,9 @@ if(!isset($_SESSION['usuarioAdmin'])){
                         <a class="collapse-item" href="#">Asignar Psicologo</a>
                     </div>
                 </div>
-                
-                
+
+
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -121,18 +106,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     </div>
                 </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -143,26 +117,10 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opcion:</h6>
                         <a class="collapse-item" href="#">Consultar Usuario</a>
-                        
+
                     </div>
                 </div>
             </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
@@ -178,9 +136,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 </div>
             </li>
 
-         
-
-            
             <!--
                 tablas
                 <li class="nav-item">
@@ -188,7 +143,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li> -->
-            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -199,7 +153,6 @@ if(!isset($_SESSION['usuarioAdmin'])){
             </div>
 
             <!-- Sidebar Message -->
-          
 
         </ul>
         <!-- End of Sidebar -->
@@ -221,26 +174,23 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     </button>
 
                     <!-- Topbar Search -->
-                    
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-
-                       
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-black-50 small"><?php echo $_SESSION['usuarioAdmin'];  ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-black-50 small"><?php echo $_SESSION['usuarioAdmin']; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                            
+
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -253,21 +203,20 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 </nav>
                 <!-- End of Topbar -->
 
-
                 <!-- contenido -->
                 <div class="container-fluid col-xl-7 col-lg-8 col-md-10 col-11" style="margin-top: 10rem;">
 
                     <div class="card shadow mb-4">
-                        
+
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Formulario Alta Usuario</h6>
                         </div>
 
 
                         <div class="card-body">
-                            
-                            
-                            
+
+
+
                             <form id="frmUsu" method="POST">
 
 
@@ -277,21 +226,12 @@ if(!isset($_SESSION['usuarioAdmin'])){
                                         <option selected disabled value="">Tipo de usuario</option>
                                         <option value="Doctor">Doctor</option>
                                         <option value="Paciente">Paciente</option>
-                                      </select>
+                                    </select>
                                 </div>
-                               
-
-
-
-
-
-
-
-
 
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    
+
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="exampleInputPassword1">
                                 </div>
                                 <div class="mb-3">
@@ -301,12 +241,9 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
 
                                     <button type="button" class="btn btn-dark mt-2" style="background-color: #671c31" id="enviarBTN">Enviar</button>
-                                
+
                             </form>
-                            
 
-
-                            
                         </div>
                     </div>
 
@@ -384,17 +321,14 @@ if(!isset($_SESSION['usuarioAdmin'])){
         let ca = document.getElementById('exampleInputPassword1');
         let ca2 = document.getElementById('exampleInputPassword2');
         let ca3 = document.getElementById('tiposUser');
-    
 
         boton_enviar.addEventListener('click', e => {
             e.preventDefault();
 
-
             if(ca.value === "" || ca2.value === "" || ca3.value === ""){
                 swal("Warning", "Llena todos los campos porfavor..", "warning");
             }else{
-                
-                
+
                 if(ca2.value === ca.value){
                         const formulario = document.querySelector('#frmUsu');
                 const form = new FormData(formulario);
@@ -413,13 +347,12 @@ if(!isset($_SESSION['usuarioAdmin'])){
                         swal("Error", res['mensaje'], "error");
                     }
 
-
                 });
-                    
+
                 }else{
                     swal("Error", "Las contraseñas no coinciden", "error");
                 }
-            
+
             }
 
         });

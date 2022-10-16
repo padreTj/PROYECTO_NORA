@@ -15,18 +15,18 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
   </head>
 
- 
+
 
 <body>
-    
+
 <main>
- 
+
     <style>
         *{
             font-family: 'Roboto', sans-serif;
@@ -48,7 +48,7 @@
         <div>
             <div class="d-flex align-items-center">
 
-              
+
                 <div class="card-body">
 
                   <form id="frmUsu" method="POST">
@@ -56,8 +56,8 @@
 <center>
   <h1 class="h3 mb-3 fw-normal"><b>Inicia sesión</b></h1>
 </center>
-                      
-                    
+
+
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" name="nome" id="floatingInput" placeholder="Nombre de usuario">
                           <label for="floatingInput">Nombre de usuario</label>
@@ -66,11 +66,11 @@
                           <input type="password" class="form-control" name="cavee" id="floatingPassword" placeholder="Contraseña">
                           <label for="floatingPassword">Contraseña</label>
                         </div>
-                    
+
                         <button class="w-100 btn btn-lg shadow text-white" style="background-color: #A87C4D;" type="button" id="btnEnv"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                         </svg> Entrar</button>
-                       
+
                       </form>
                 </div>
 
@@ -93,11 +93,11 @@
             INSTITUTO DE PSIQUIATRÍA DEL ESTADO DE BAJA CALIFORNIA<br>
 
             CALLE 11va. # 1753, ENTRE RÍO VERDE Y RÍO ATOYAC, COL.  MEXICALI, SECCIÓN SEGUNDA.  C. P. 21396<br>
-            
+
             RFC: IPE-010112861 <br>
-            
+
             TEL. (686) 8 42 70 50, (686) 842 70 85<br>
-            
+
             IPEBC SALUD MENTAL
         </p>
       </section>
@@ -111,19 +111,10 @@
   </footer>
 </section>
 
-
-
-
-
-
-
-
-
-  
 </main>
 
 </body>
-    
+
 
 </html>
 
@@ -134,18 +125,12 @@
         let ca = document.getElementById('floatingInput');
         let ca2 = document.getElementById('floatingPassword');
 
-    
-
         boton_enviar.addEventListener('click', e => {
             e.preventDefault();
-
-
             if(ca.value === "" || ca2.value === ""){
                 swal("Hey!", "Llena todos los campos porfavor..", "warning");
             }else{
-                
-                
-              
+
                         const formulario = document.querySelector('#frmUsu');
                 const form = new FormData(formulario);
                 const peticion = {
@@ -157,13 +142,7 @@
                 .then(res => {
 
                     if (res['respuesta']) {
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+
                         swal("Login exitoso!",res['mensaje'], "success", {
   buttons: {
     catch: {
@@ -174,29 +153,22 @@
 })
 .then((value) => {
   switch (value) {
- 
+
     case "ok":
       formulario.reset();
     window.location= 'validacionFormu.php';
       break;
- 
+
     default:
-     formulario.reset();
+    formulario.reset();
                         window.location= 'validacionFormu.php';
   }
 });
-                        
+
                     }else{
                         swal("Error", res['mensaje'], "error");
                     }
-
-
                 });
-                    
-                
-            
             }
-
         });
-
 </script>
