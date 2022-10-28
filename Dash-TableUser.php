@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['usuarioAdmin'])){
 
-    header("Location:index.php");
+  header("Location:index.php");
 }
 
 ?>
@@ -31,19 +31,33 @@ if(!isset($_SESSION['usuarioAdmin'])){
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+   
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body id="page-top">
 
-        <!-- Page Wrapper -->
-        <!-- Page Wrapper -->
-        <div id="wrapper">
+    <!-- Page Wrapper -->
+     <!-- Page Wrapper -->
+     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     
             <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-0">
                     <img src="Gob.png" alt="" width="26em">
                 </div>
@@ -51,25 +65,25 @@ if(!isset($_SESSION['usuarioAdmin'])){
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+           <li class="nav-item active">
                 <a class="nav-link" href="Dash-inicio.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Inicio</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+             <div class="sidebar-heading">
                 Menu
             </div>
 
         
-            <li class="nav-item">
+          <li class="nav-item">
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -77,7 +91,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     <span>Altas</span>
                 </a>
                 
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+              <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opcion:</h6>
@@ -91,7 +105,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
 
 
-        <li class="nav-item">
+         <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -110,10 +124,10 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
 
 
-<li class="nav-item">
+ <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-table"></i>
+                     <i class="fas fa-fw fa-table"></i>
                     <span>Consultas</span>
                 </a>
                 <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -127,7 +141,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
 
 
-<li class="nav-item">
+ <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
                     aria-expanded="true" aria-controls="collapse3">
                     <i class="fas fa-fw fa-cog"></i>
@@ -152,14 +166,16 @@ if(!isset($_SESSION['usuarioAdmin'])){
             </div>
 
             <!-- Sidebar Message -->
-        
+          
 
         </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
+ <div class="text-white" style="background-color: #A87C4D;"><center>
+                Telefono: 664 7625 882
+            </center></div>
             <!-- Main Content -->
             <div id="content">
 
@@ -174,7 +190,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                     <!-- Topbar Search -->
                     
 
-                    <ul class="navbar-nav ml-auto">
+                     <ul class="navbar-nav ml-auto">
 
 
                         <!-- Nav Item - User Information -->
@@ -188,8 +204,8 @@ if(!isset($_SESSION['usuarioAdmin'])){
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                            
-                            
+                              
+                              
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -199,10 +215,16 @@ if(!isset($_SESSION['usuarioAdmin'])){
 
                     </ul>
             
-
+   
 
                 </nav>
                 <!-- End of Topbar -->
+                         
+                
+                
+                
+                
+                
                 <div class="container-fluid">
 
                     
@@ -212,61 +234,37 @@ if(!isset($_SESSION['usuarioAdmin'])){
                             <h6 class="m-0 font-weight-bold text-primary">Todos los Usuarios</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                        <div class="form-group">
+            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Busca un nombre aqui." />
+             </div>
+                           <div class="table-responsive" id="dynamic_content">
+            
+          </div>
 
-                                    <thead>
-                                        <tr>
-                                            <th>idUsuario</th>
-                                            <th>Nombre</th>
-                                            <th>Clave</th>
-                                            <th>Tipo de usuario</th>
-                                        
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>idUsuario</th>
-                                            <th>Nombre</th>
-                                            <th>Clave</th>
-                                            <th>Tipo de usuario</th>
-                                        
-                                        </tr>
-                                    </tfoot>
-                                    
-                                    
-                                    <?php
-                                    include("./conexion.php");
-                                    $sql="SELECT idUsuario,nombre,clave,tipoUsuario FROM usuarios ORDER BY idUsuario DESC";
-                                    $ejecutar=mysqli_query($obj_conexion, $sql);
-                                    while($fila=mysqli_fetch_array($ejecutar)){
-                                    ?>
-
-                                    
-                                    <tbody>
-                                        <tr>
-                                            
-                                            <td><?php echo $fila[0] ?></td>
-                                            <td><?php echo $fila[1] ?></td>
-                                            <td><?php echo $fila[2] ?></td>
-                                            <td><?php echo $fila[3] ?></td>
-                                            
-                                            
-                                        </tr>
-                                    </tbody>
-                                    
-                                    <?php
-                                    }
-                                    ?>
-                                    
-                    
-                                    
-                                </table>
-                            </div>
                         </div>
                     </div>
 
                 </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <!-- /.container-fluid -->
 
             </div>
@@ -307,7 +305,7 @@ if(!isset($_SESSION['usuarioAdmin'])){
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="cerrarSesion.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -333,3 +331,34 @@ if(!isset($_SESSION['usuarioAdmin'])){
 </body>
 
 </html>
+<script>
+  $(document).ready(function(){
+
+    load_data(1);
+
+    function load_data(page, query = '')
+    {
+      $.ajax({
+        url:"fetch.php",
+        method:"POST",
+        data:{page:page, query:query},
+        success:function(data)
+        {
+          $('#dynamic_content').html(data);
+        }
+      });
+    }
+
+    $(document).on('click', '.page-link', function(){
+      var page = $(this).data('page_number');
+      var query = $('#search_box').val();
+      load_data(page, query);
+    });
+
+    $('#search_box').keyup(function(){
+      var query = $('#search_box').val();
+      load_data(1, query);
+    });
+
+  });
+</script>
